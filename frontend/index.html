@@ -11,7 +11,6 @@ a{color:inherit}.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
 .toast{background:var(--fg);color:var(--bg);padding:12px 16px;font-size:14px;animation:tin .35s ease both;border-left:6px solid var(--ac)}
 .toast.err{border-left-color:#f33}.toast.ok{border-left-color:#2c6}
 @keyframes tin{from{opacity:0;transform:translateX(40px)}}
-.xlink{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 footer{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;padding:28px 16px;font-size:13px;position:relative;z-index:2}
 footer a{text-decoration:underline}
 @media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}*{animation:none!important}}
@@ -25,7 +24,7 @@ body{font-family:'Sora',sans-serif;cursor:crosshair}
 select{background:transparent;border:2px solid var(--fg);padding:5px;font:inherit;font-weight:700}
 .wallet-btn,.go{background:var(--ac);color:#fff;border:0;padding:11px 18px;font:400 18px 'Bowlby One';letter-spacing:.08em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);cursor:pointer;transition:transform .15s}
 .wallet-btn:hover,.go:hover{transform:translateX(6px)}
-.arena{min-height:100vh; grid-auto-flow:dense; grid-auto-flow:dense;display:grid;position:relative;overflow:hidden;background:var(--fg)}
+.arena{min-height:100vh;display:grid;grid-auto-flow:dense;position:relative;overflow:hidden;background:var(--fg)}
 .half{position:absolute;inset:0}
 .half.a{background:var(--bg);clip-path:polygon(0 0,62% 0,38% 100%,0 100%)}
 .half.b{background:var(--ac);clip-path:polygon(62% 0,100% 0,100% 100%,38% 100%);animation:wipe 1.2s cubic-bezier(.7,0,.2,1) both}
@@ -39,11 +38,11 @@ select{background:transparent;border:2px solid var(--fg);padding:5px;font:inheri
 .pot{position:absolute;z-index:4;right:16px;bottom:20px;color:#fff;text-align:right;font:400 clamp(20px,4vw,48px)/1 'Bowlby One'}.pot small{display:block;font:700 11px 'Sora';letter-spacing:.2em}
 .strip{background:var(--fg);color:var(--ac);overflow:hidden;white-space:nowrap;font:400 40px 'Bowlby One';padding:8px 0}
 .strip div{display:inline-block;animation:mq 20s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
-.ring{ grid-aut grid-auto-flow:dense;o-flow:de grid-auto-fl grid-auto-flow:dense;ow:dense;nse;padding:70px 16px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:start}
+.ring{padding:70px 16px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:start}
 .how{font:400 clamp(40px,7vw,100px)/.9 'Bowlby One';text-transform:uppercase}.how em{color:var(--ac);font-style:normal}
-.how p{font:400 16px/1.5 'Sora';text-trans grid-auto-flow:dense; grid-auto-flow:dense;form:none;margin-top:20px;color:var(--mut);max-width:34ch}
+.how p{font:400 16px/1.5 'Sora';text-transform:none;margin-top:20px;color:var(--mut);max-width:34ch}
 .cards{display:grid;gap:22px}
-.cards form{b grid-auto-flow:dense; grid-auto-flow:dense;ackground:#fff;border:3px solid var(--fg);padding:22px;box-shadow:12px 12px 0 var(--fg);display:grid;gap:10px}
+.cards form{background:#fff;border:3px solid var(--fg);padding:22px;box-shadow:12px 12px 0 var(--fg);display:grid;gap:10px}
 .cards form:nth-child(2){margin-left:6vw;box-shadow:12px 12px 0 var(--ac)}
 .cards h2{font:400 36px 'Bowlby One';text-transform:uppercase}
 .cards label{font:700 11px 'Sora';letter-spacing:.16em;text-transform:uppercase}
@@ -51,26 +50,26 @@ select{background:transparent;border:2px solid var(--fg);padding:5px;font:inheri
 .cards input:focus{border-color:var(--ac)}
 .out{display:none;font:12px ui-monospace,monospace;white-space:pre-wrap;word-break:break-all;background:#e6f3fc;padding:10px}.out.show{display:block}
 .cards .go{justify-self:start}
-.board{ grid-au grid-auto-flow:dense;to-flow:d grid-auto-fl grid-auto-flow:dense;ow:dense;ense;padding:0 16px 70px}.board h3{font:400 54px 'Bowlby One';text-transform:uppercase;margin-bottom:12px}
+.board{padding:0 16px 70px}.board h3{font:400 54px 'Bowlby One';text-transform:uppercase;margin-bottom:12px}
 .m{display:grid;grid-template-columns:50px 1fr auto 1fr 90px;align-items:center;gap:10px;border-top:3px solid var(--fg);padding:14px 0;font-weight:700;transition:background .2s,padding .2s}
-.m:hover{background:var(--ac);color:#fff;paddin grid-auto-flow:dense; grid-auto-flow:dense;g-inline:12px}
+.m:hover{background:var(--ac);color:#fff;padding-inline:12px}
 .m b{font:400 28px 'Bowlby One'}.m .vsm{color:var(--ac);font:400 20px 'Bowlby One'}.m:hover .vsm{color:#fff}
-@media(max-width:800px){.ring{grid-template-columns:1fr}.cards form:nth-child(2){margin-left:0}.m{grid-template-columns:36px 1fr 24px 1fr;}.m span:last-child{grid-column:2/-1}.half.a{clip-path:polygon(0 0,100% 0,100% 40%,0 60%)}.half.b{clip-path:polygon(0 60%,100% 40%,100% 100%,0 100%);animation:none}.hero-t{padding-top:100px}.launch{bottom:90px}}
+@media(max-width:800px){.ring{grid-template-columns:1fr}.cards form:nth-child(2){margin-left:0}.m{grid-template-columns:36px 1fr 24px 1fr}.m span:last-child{grid-column:2/-1}.half.a{clip-path:polygon(0 0,100% 0,100% 40%,0 60%)}.half.b{clip-path:polygon(0 60%,100% 40%,100% 100%,0 100%);animation:none}.hero-t{padding-top:100px}.launch{bottom:90px}}
 
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--acc,currentColor);outline-offset:2px}</style></head><body>
 <div id="toasts"></div>
-<header class="bar"><a class="brand" href="#top">PVP/BOT</a><nav class="barr"><a class="xlink" id="xl" href="javascript:void(0)" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>@handle</span></a><span class="badge" id="badge">Chain ID <b id="cid">677</b></span><select id="net" aria-label="Network"><option value="677">Mainnet 677</option><option value="968">Testnet 968</option></select><button class="wallet-btn" id="wbtn" type="button" onclick="appkitConnect()" >Connect Wallet</button></nav></header><main id="top"><section class="arena"><div class="half a"></div><div class="half b"></div>
+<header class="bar"><a class="brand" href="#top">PVP/BOT</a><nav class="barr"><span class="badge" id="badge">Chain ID <b id="cid">677</b></span><select id="net" aria-label="Network"><option value="677">Mainnet 677</option><option value="968">Testnet 968</option></select><button class="wallet-btn" id="wbtn" type="button" onclick="appkitConnect()" >Connect Wallet</button></nav></header><main id="top"><section class="arena"><div class="half a"></div><div class="half b"></div>
 <div class="hero-t"><h1><span class="l rv">Stake.</span><span class="r rv">Fight.</span></h1></div><div class="vs">VS</div>
-<div class="launch">Built on BOT Chain Mainnet</div><div class="pot"><small>WINNER TAKES</small><span id="pot">2&times; THE STAKE</span></div></section>
-<div class="strip"><div>WINNER TAKES 2X &#8212; NO RAKE &#8212; NO MERCY &#8212; ESCROW ON-CHAIN &#8212; WINNER TAKES 2X &#8212; NO RAKE &#8212; NO MERCY &#8212; ESCROW ON-CHAIN &#8212; WINNER TAKES 2X &#8212; NO RAKE &#8212; NO MERCY &#8212; ESCROW ON-CHAIN &#8212;</div></div>
-<section class="ring"><div class="how rv">Put <em>BOT</em> on yourself.<p>Create a match with an opponent and lock your stake. They match it. The referee resolves; the winner walks with double. Not started? Cancel and get it back.</p></div>
+<div class="launch">Built on BOT Chain Mainnet</div><div class="pot"><small>WINNER TAKES</small><span id="pot">2&times;THE STAKE</span></div></section>
+<div class="strip"><div>WINNER TAKES 2X &#8212;NO RAKE &#8212;NO MERCY &#8212;ESCROW ON-CHAIN &#8212;WINNER TAKES 2X &#8212;NO RAKE &#8212;NO MERCY &#8212;ESCROW ON-CHAIN &#8212;WINNER TAKES 2X &#8212;NO RAKE &#8212;NO MERCY &#8212;ESCROW ON-CHAIN &#8212;</div></div>
+<section class="ring"><div class="how rv">Put <em>BOT</em> on yourself.<p>Create a match with an opponent and lock your stake. They match it. The referee resolves;the winner walks with double. Not started? Cancel and get it back.</p></div>
 <div class="cards">
 <form class="rv" data-fn="createMatch"><h2>Create match</h2><label>Opponent</label><input name="opponent" value="0x4c5d000000000000000000000000000000000009"><label>Stake (BOT)</label><input name="_value" id="stake" type="number" step="0.01" value="1"><div>Pot: <b id="potv">2.00 BOT</b></div><button class="go" type="submit">Lock stake</button><div class="out"></div></form>
 <form class="rv" data-fn="resolveMatch"><h2>Resolve match</h2><label>Match ID</label><input name="matchId" type="number" value="1"><label>Winner</label><input name="winner" value="0x4c5d000000000000000000000000000000000009"><button class="go" type="submit">Declare winner</button><div class="out"></div></form>
 <form class="rv" data-fn="cancelMatch"><h2>Cancel match</h2><label>Match ID</label><input name="matchId" type="number" value="1"><button class="go" type="submit">Pull out</button><div class="out"></div></form>
 <form class="rv" data-fn="getMatch"><h2>Inspect match</h2><label>Match ID</label><input name="matchId" type="number" value="1"><button class="go" type="submit">Read</button><div class="out"></div></form>
 </div></section>
-<section class="board"><h3 class="rv">Live bouts</h3><div id="board"></div></section></main><footer><span>PvP Arena — PvP match staking, winner takes 2x on BOT Chain</span><span>&#8226; Chain ID <b>677</b> &#8226; Contract <span class="mono">0xCA…</span></span><span>&#8226; <a href="https://botchain.ai" target="_blank" rel="noopener">BOT Chain Website</a> &#8226; <a href="https://scan.botchain.ai/" target="_blank" rel="noopener">BOTScan Explorer</a></span></footer>
+<section class="board"><h3 class="rv">Live bouts</h3><div id="board"></div></section></main><footer><span>PvP Arena — PvP match staking, winner takes 2x on BOT Chain</span><span>&#8226;Chain ID <b>677</b> &#8226;Contract <span class="mono">0xCA…</span></span><span>&#8226; <a href="https://botchain.ai" target="_blank" rel="noopener">BOT Chain Website</a> &#8226; <a href="https://scan.botchain.ai/" target="_blank" rel="noopener">BOTScan Explorer</a></span></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@reown/appkit@1.8.21/dist/appkit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@reown/appkit-adapter-ethers@1.8.21/dist/appkit-adapter-ethers.min.js"></script>
@@ -82,133 +81,124 @@ const ABI=['function createMatch(address opponent) payable returns (uint256)','f
 const ST=['Open','Resolved','Cancelled'];
 const M=[{id:1,a:'0x8f21000000000000000000000000000000000001',b:'0x4c5d000000000000000000000000000000000009',stake:1,s:0,w:null},{id:2,a:'0xd0a3000000000000000000000000000000000004',b:'0x77e2000000000000000000000000000000000005',stake:5,s:1,w:'0xd0a3000000000000000000000000000000000004'}];
 const get=id=>{const m=M.find(x=>x.id==id);if(!m)throw new Error('No such match');return m};
-const DEMO={createMatch(a,v){const m={id:M.length+1,a:account||'0xYou',b:a[0],stake:Number(ethers.formatEther(v)),s:0,w:null};M.push(m);return {matchId:m.id,locked:m.stake+' BOT'}},
- resolveMatch(a){const m=get(a[0]);if(m.s)throw new Error('Match not open');if(![m.a.toLowerCase(),m.b.toLowerCase()].includes(String(a[1]).toLowerCase()))throw new Error('Winner must be a player');m.s=1;m.w=a[1];return {winner:a[1],payout:m.stake*2+' BOT'}},
- cancelMatch(a){const m=get(a[0]);if(m.s)throw new Error('Match not open');m.s=2;return {refunded:m.stake+' BOT'}},
- getMatch(a){const m=get(a[0]);return {creator:m.a,opponent:m.b,stake:m.stake+' BOT',status:ST[m.s],winner:m.w||'none'}}};
-function draw(){$('#board').innerHTML=M.map(m=>`<div class="m rv in"><b>#${m.id}</b><span class="mono">${short(m.a)}</span><span class="vsm">VS</span><span class="mono">${short(m.b)}</span><span>${m.stake*2} BOT &middot; ${ST[m.s]}</span></div>`).join('')}
+const DEMO={createMatch(a,v){const m={id:M.length+1,a:account||'0xYou',b:a[0],stake:Number(ethers.formatEther(v)),s:0,w:null};M.push(m);return{matchId:m.id,locked:m.stake+' BOT'}},
+ resolveMatch(a){const m=get(a[0]);if(m.s)throw new Error('Match not open');if(![m.a.toLowerCase(),m.b.toLowerCase()].includes(String(a[1]).toLowerCase()))throw new Error('Winner must be a player');m.s=1;m.w=a[1];return{winner:a[1],payout:m.stake*2+' BOT'}},
+ cancelMatch(a){const m=get(a[0]);if(m.s)throw new Error('Match not open');m.s=2;return{refunded:m.stake+' BOT'}},
+ getMatch(a){const m=get(a[0]);return{creator:m.a,opponent:m.b,stake:m.stake+' BOT',status:ST[m.s],winner:m.w||'none'}}};
+function draw(){$('#board').innerHTML=M.map(m=>`<div class="m rv in"><b>#${m.id}</b><span class="mono">${short(m.a)}</span><span class="vsm">VS</span><span class="mono">${short(m.b)}</span><span>${m.stake*2}BOT &middot; ${ST[m.s]}</span></div>`).join('')}
 let AFTER=()=>draw();
 
-const X_HANDLE='TODO_handle'; // TODO: set real X handle (no @)
-const CA={677:'0xCA00000000000000000000000000000000000000',968:''}; // TODO: set deployed contract addresses
-const CA_PLACEHOLDER=true; // TODO: set false once CA[677] is real
+const CA={677:'0xCA00000000000000000000000000000000000000',968:''}; // TODO:set deployed contract addresses
+const CA_PLACEHOLDER=true; // TODO:set false once CA[677] is real
 const CHAINS={677:{hex:'0x2a5',name:'BOT Chain Mainnet',rpc:'https://rpc.botchain.ai',scan:'https://scan.botchain.ai'},968:{hex:'0x3c8',name:'BOT Chain Testnet',rpc:'https://rpc.bohr.life',scan:''}};
 let chainId=677,signer=null,account=null;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 function toast(m,t=''){const e=document.createElement('div');e.className='toast '+t;e.textContent=m;$('#toasts').appendChild(e);setTimeout(()=>e.remove(),4800)}
 const short=a=>a?a.slice(0,6)+'…'+a.slice(-4):'';
-$('#xl').href='https://x.com/'+X_HANDLE;$('#xl span').textContent='@'+X_HANDLE;
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 $$('.rv').forEach(e=>io.observe(e));
 async function ensureChain(id){const c=CHAINS[id],eth=window.ethereum;if(!eth)return;
  try{await eth.request({method:'wallet_switchEthereumChain',params:[{chainId:c.hex}]})}
  catch(e){if(e.code===4902||(e.data&&e.data.originalError&&e.data.originalError.code===4902)||/Unrecognized|not added/i.test(explainError(e)||'')){
-  const p={chainId:c.hex,chainName:c.name,nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:[c.rpc]};if(c.scan)p.blockExplorerUrls=[c.scan];
-  await eth.request({method:'wallet_addEthereumChain',params:[p]})}else throw e}}
-, true);
-
+ const p={chainId:c.hex,chainName:c.name,nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:[c.rpc]};if(c.scan)p.blockExplorerUrls=[c.scan];
+ await eth.request({method:'wallet_addEthereumChain',params:[p]})}else throw e}}
 // Chain and account event handlers (Phase B)
 if(window.ethereum&&window.ethereum.on){
-  window.ethereum.on('accountsChanged',(a)=>{
-    const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');
-    if(b)b.textContent=a&&a[0]?a[0].slice(0,6)+'…'+a[0].slice(-4):'Connect wallet';
-  });
-  window.ethereum.on('chainChanged',(id)=>{
-    const n=parseInt(id,16);
-    const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');
-    if(b)b.textContent='Chain ID '+n;
-  });
+ window.ethereum.on('accountsChanged',(a)=>{
+ const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');
+ if(b)b.textContent=a&&a[0]?a[0].slice(0,6)+'…'+a[0].slice(-4):'Connect wallet';
+});
+ window.ethereum.on('chainChanged',(id)=>{
+ const n=parseInt(id,16);
+ const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');
+ if(b)b.textContent='Chain ID '+n;
+});
 }
 
-// ===== Phase B: AppKit + GSAP runtime =====
-const PROJECT_ID='f018499b1e4a94d961ab67aeeeff3254';
-const CA677='0x0000000000000000000000000000000000000000';
-const NETS={677:{label:'Mainnet 677',rpc:'https://rpc.botchain.ai',hex:'0x2a5',ca:CA677},968:{label:'Testnet 968',rpc:'https://rpc.bohr.life',hex:'0x3c8',ca:'0x0000000000000000000000000000000000000000'}};
-let appkit=null, currentNet=677;
+// ===== Phase B:AppKit + GSAP runtime =====
+let appkit=null, currentNet=677, contract=null;
 
 async function initAppKit(){
-  try{
-    const {createAppKit}=window;
-    const {EthersAdapter}=window;
-    const adapter=new EthersAdapter();
-    appkit=createAppKit({
-      adapters:[adapter],
-      networks:[
-        {id:677,name:'BOT Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.botchain.ai']}}},
-        {id:968,name:'BOT Testnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.bohr.life']}}}
+ try{
+ const{createAppKit}=window;
+ const{EthersAdapter}=window;
+ const adapter=new EthersAdapter();
+ appkit=createAppKit({
+ adapters:[adapter],
+ networks:[
+{id:677,name:'BOT Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.botchain.ai']}}},
+{id:968,name:'BOT Testnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.bohr.life']}}}
       ],
-      projectId:PROJECT_ID,
-      features:{analytics:false}
-    });
-    appkit.subscribeAccount((a)=>{const addr=a.address||null;const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';const m=$('#mode')||$('#modeTag');if(m)m.textContent=addr?'LIVE':'DEMO';});
-    appkit.subscribeNetwork((n)=>{if(n&&n.chainId){currentNet=Number(n.chainId);const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');if(b)b.textContent='Chain ID '+currentNet;}});
-  }catch(e){console.warn('AppKit init failed',e);}
+ projectId:PROJECT_ID,
+ features:{analytics:false}
+});
+ appkit.subscribeAccount((a)=>{const addr=a.address||null;const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';const m=$('#mode')||$('#modeTag');if(m)m.textContent=addr?'LIVE':'DEMO'});
+ appkit.subscribeNetwork((n)=>{if(n&&n.chainId){currentNet=Number(n.chainId);const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');if(b)b.textContent='Chain ID '+currentNet}});
+}catch(e){console.warn('AppKit init failed',e)}
 }
 async function appkitConnect(){
-  if(!appkit)await initAppKit();
-  if(appkit){try{await appkit.open();}catch(e){toast('AppKit connect failed: '+(explainError(e)||e.code),'err');}return;}
-  // Fallback: raw ethers connect
-  if(!window.ethereum){toast('No wallet found - install a Web3 wallet',true);return;}
-  try{const accts=await window.ethereum.request({method:'eth_requestAccounts'});setWallet(accts.length>0,accts[0]);provider=new ethers.BrowserProvider(window.ethereum);signer=await provider.getSigner();await ensureChain();initContract();}catch(e){toast('Wallet connect: '+ (explainError(e)||e.code),true);}}
-function setWallet(connected,addr){const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';b.classList.toggle('connected',!!addr);}
-function initContract(){if(!currentNet){return;}try{const provider=new ethers.JsonRpcProvider(NETS[currentNet].rpc);const abi=[];contract=new ethers.Contract(NETS[currentNet].ca,abi,signer||provider);}catch(e){console.warn('contract init',e);contract=null;}}
-async function ensureChain(){if(!window.ethereum)return;try{const cid=await window.ethereum.request({method:'eth_chainId'});currentNet=Number(cid);if(NETS[currentNet]){}else{try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x2a5'}]});currentNet=677;}catch(sw){if(sw.code===4902){try{await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x2a5',chainName:'BOT Chain Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:['https://rpc.botchain.ai']}]})}catch(ae){toast('Add chain failed: '+(aexplainError(e)||ae.code),'err');}}}else{toast('Switch rejected: '+(sw.message||sw.code),'err');}}}catch(e){currentNet=677;}}
+ if(!appkit)await initAppKit();
+ if(appkit){try{await appkit.open()}catch(e){toast('AppKit connect failed: '+(explainError(e)||e.code),'err')}return}
+  // Fallback:raw ethers connect
+ if(!window.ethereum){toast('No wallet found - install a Web3 wallet',true);return}
+ try{const accts=await window.ethereum.request({method:'eth_requestAccounts'});setWallet(accts.length>0,accts[0]);provider=new ethers.BrowserProvider(window.ethereum);signer=await provider.getSigner();await ensureChain();initContract()}catch(e){toast('Wallet connect: '+ (explainError(e)||e.code),true)}}
+function setWallet(connected,addr){const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';b.classList.toggle('connected',!!addr)}
+function initContract(){if(!currentNet){return}try{const provider=new ethers.JsonRpcProvider(NETS[currentNet].rpc);const abi=[];contract=new ethers.Contract(NETS[currentNet].ca,abi,signer||provider)}catch(e){console.warn('contract init',e);contract=null}}
+async function ensureChain(){if(!window.ethereum)return;try{const cid=await window.ethereum.request({method:'eth_chainId'});currentNet=Number(cid);if(!NETS[currentNet]){try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x2a5'}]});currentNet=677}catch(sw){if(sw.code===4902||/unrecognized|not added|add/i.test(sw.message||sw.code||'')){try{await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x2a5',chainName:'BOT Chain Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:['https://rpc.botchain.ai'],blockExplorerUrls:['https://scan.botchain.ai']}]});currentNet=677}catch(ae){toast('Add chain failed: '+(ae.message||ae.code),'err')}}else{toast('Switch rejected: '+(sw.message||sw.code),'err')}}}}catch(e4){currentNet=currentNet||677}}
 
-function explainError(e){if(!e)return 'Unknown error';const m=explainError(e)||explainError(e)||(e.data&&e.data.message)||'';if(e.code===4001)return 'Transaction rejected in wallet. Nothing spent on-chain.';let msg=String(m||explainError(e)||String(e));msg=msg.replace(/^execution reverted:/i,'').trim();if(msg.length>170)msg=msg.slice(0,167)+'...';return msg;}
-// ===== Phase B: AppKit + GSAP runtime =====
-const PROJECT_ID='f018499b1e4a94d961ab67aeeeff3254';
-const CA677='0x0000000000000000000000000000000000000000';
-const NETS={677:{label:'Mainnet 677',rpc:'https://rpc.botchain.ai',hex:'0x2a5',ca:CA677},968:{label:'Testnet 968',rpc:'https://rpc.bohr.life',hex:'0x3c8',ca:'0x0000000000000000000000000000000000000000'}};
-let appkit=null, currentNet=677, contract=null, signer=null;
+function explainError(e){if(!e)return 'Unknown error';const m=explainError(e)||explainError(e)||(e.data&&e.data.message)||'';if(e.code===4001)return 'Transaction rejected in wallet. Nothing spent on-chain.';let msg=String(m||explainError(e)||String(e));msg=msg.replace(/^execution reverted:/i,'').trim();if(msg.length>170)msg=msg.slice(0,167)+'..';return msg}
+// ===== Phase B:AppKit + GSAP runtime =====
+
+
 
 async function initAppKit(){
-  try{
-    const {createAppKit}=window;
-    const {EthersAdapter}=window;
-    const adapter=new EthersAdapter();
-    appkit=createAppKit({
-      adapters:[adapter],
-      networks:[
-        {id:677,name:'BOT Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.botchain.ai']}}},
-        {id:968,name:'BOT Testnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.bohr.life']}}}
+ try{
+ const{createAppKit}=window;
+ const{EthersAdapter}=window;
+ const adapter=new EthersAdapter();
+ appkit=createAppKit({
+ adapters:[adapter],
+ networks:[
+{id:677,name:'BOT Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.botchain.ai']}}},
+{id:968,name:'BOT Testnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:{default:{http:['https://rpc.bohr.life']}}}
       ],
-      projectId:PROJECT_ID,
-      features:{analytics:false}
-    });
-    appkit.subscribeAccount((a)=>{const addr=a.address||null;const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';const m=$('#mode')||$('#modeTag');if(m)m.textContent=addr?'LIVE':'DEMO';});
-    appkit.subscribeNetwork((n)=>{if(n&&n.chainId){currentNet=Number(n.chainId);const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');if(b)b.textContent='Chain ID '+currentNet;}});
-  }catch(e){console.warn('AppKit init failed',e);}
+ projectId:PROJECT_ID,
+ features:{analytics:false}
+});
+ appkit.subscribeAccount((a)=>{const addr=a.address||null;const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';const m=$('#mode')||$('#modeTag');if(m)m.textContent=addr?'LIVE':'DEMO'});
+ appkit.subscribeNetwork((n)=>{if(n&&n.chainId){currentNet=Number(n.chainId);const b=$('#badge')||$('#cid')||$('#chainBadge')||$('#netpill');if(b)b.textContent='Chain ID '+currentNet}});
+}catch(e){console.warn('AppKit init failed',e)}
 }
 async function appkitConnect(){
-  if(!appkit)await initAppKit();
-  if(appkit){try{await appkit.open();}catch(e){toast('AppKit connect failed: '+(e.message||e.code),'err');return;}}
-  if(!window.ethereum){toast('No wallet found - install a Web3 wallet',true);return;}
-  try{const accts=await window.ethereum.request({method:'eth_requestAccounts'});setWallet(accts.length>0,accts[0]);provider=new ethers.BrowserProvider(window.ethereum);signer=await provider.getSigner();await ensureChain();initContract();}catch(e){toast('Wallet connect: '+(e.message||e.code),true);}
+ if(!appkit)await initAppKit();
+ if(appkit){try{await appkit.open()}catch(e){toast('AppKit connect failed: '+(e.message||e.code),'err');return}}
+ if(!window.ethereum){toast('No wallet found - install a Web3 wallet',true);return}
+ try{const accts=await window.ethereum.request({method:'eth_requestAccounts'});setWallet(accts.length>0,accts[0]);provider=new ethers.BrowserProvider(window.ethereum);signer=await provider.getSigner();await ensureChain();initContract()}catch(e){toast('Wallet connect: '+(e.message||e.code),true)}
 }
-function setWallet(connected,addr){const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';b.classList.toggle('connected',!!addr);}
-function initContract(){if(!currentNet){return;}try{const provider=new ethers.JsonRpcProvider(NETS[currentNet].rpc);contract=new ethers.Contract(NETS[currentNet].ca,[],signer||provider);}catch(e){console.warn('contract init',e);contract=null;}}
-async function ensureChain(){if(!window.ethereum)return;try{const cid=await window.ethereum.request({method:'eth_chainId'});currentNet=Number(cid);if(!NETS[currentNet]){try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x2a5'}]})}catch(sw){if(sw.code===4902){try{await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x2a5',chainName:'BOT Chain Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:['https://rpc.botchain.ai']}]})}catch(ae){toast('Add chain failed: '+(ae.message||ae.code),'err');}}}else{toast('Switch rejected: '+(sw.message||sw.code),'err');}}}catch(e){currentNet=677;}}
+function setWallet(connected,addr){const b=$('#connect')||$('#connectBtn')||$('#walletBtn')||$('#wbtn');if(b)b.textContent=addr?addr.slice(0,6)+'…'+addr.slice(-4):'Connect wallet';b.classList.toggle('connected',!!addr)}
+function initContract(){if(!currentNet){return}try{const provider=new ethers.JsonRpcProvider(NETS[currentNet].rpc);contract=new ethers.Contract(NETS[currentNet].ca,[],signer||provider)}catch(e){console.warn('contract init',e);contract=null}}
+async function ensureChain(){if(!window.ethereum)return;try{const cid=await window.ethereum.request({method:'eth_chainId'});currentNet=Number(cid);if(!NETS[currentNet]){try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x2a5'}]});currentNet=677}catch(sw){if(sw.code===4902||/unrecognized|not added|add/i.test(sw.message||sw.code||'')){try{await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x2a5',chainName:'BOT Chain Mainnet',nativeCurrency:{name:'BOT',symbol:'BOT',decimals:18},rpcUrls:['https://rpc.botchain.ai'],blockExplorerUrls:['https://scan.botchain.ai']}]});currentNet=677}catch(ae){toast('Add chain failed: '+(ae.message||ae.code),'err')}}else{toast('Switch rejected: '+(sw.message||sw.code),'err')}}}}catch(e4){currentNet=currentNet||677}}
 
-function explainError(e){if(!e)return 'Unknown error';const m=e.shortMessage||e.reason||(e.data&&e.data.message)||'';if(e.code===4001)return 'Transaction rejected in wallet. Nothing spent on-chain.';let msg=String(m||e.message||String(e));msg=msg.replace(/^execution reverted:/i,'').trim();if(msg.length>170)msg=msg.slice(0,167)+'...';return msg;}
+function explainError(e){if(!e)return 'Unknown error';const m=e.shortMessage||e.reason||(e.data&&e.data.message)||'';if(e.code===4001)return 'Transaction rejected in wallet. Nothing spent on-chain.';let msg=String(m||e.message||String(e));msg=msg.replace(/^execution reverted:/i,'').trim();if(msg.length>170)msg=msg.slice(0,167)+'..';return msg}
 
-async function sendTx(btn,fnName,args,valueEth,label){if(!contract||!signer){toast('Connect wallet first',true);return}const resting=btn.textContent;btn.disabled=true;btn.classList.add('busy');btn.textContent='Confirm in wallet...';try{if(!currentNet)await ensureChain();const usable=contract.connect(signer);const tx=valueEth!=null?await usable[fnName](...args,{value:ethers.parseEther(String(valueEth))}):await usable[fnName](...args);const rc=await tx.wait();toast((label||fnName)+' confirmed on '+(currentNet?currentNet.label:'chain'));return tx;}catch(e){toast(explainError(e),true);throw e;}finally{btn.disabled=false;btn.classList.remove('busy');btn.textContent=resting;}}
+async function sendTx(btn,fnName,args,valueEth,label){if(!contract||!signer){toast('Connect wallet first',true);return}const resting=btn.textContent;btn.disabled=true;btn.classList.add('busy');btn.textContent='Confirm in wallet..';try{if(!currentNet)await ensureChain();const usable=contract.connect(signer);const tx=valueEth!=null?await usable[fnName](...args,{value:ethers.parseEther(String(valueEth))}):await usable[fnName](...args);const rc=await tx.wait();toast((label||fnName)+' confirmed on '+(currentNet?currentNet.label:'chain'));return tx}catch(e){toast(explainError(e),true);throw e}finally{btn.disabled=false;btn.classList.remove('busy');btn.textContent=resting}}
 
 function initGSAP(){
-  if(typeof gsap==='undefined')return;
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduced){document.querySelectorAll('.rv').forEach(el=>{el.style.opacity='1';el.style.transform='none';});return;}
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.from('.rv',{opacity:0,y:26,duration:0.7,ease:'expo.out',stagger:0.07});
-  gsap.utils.toArray('.rv').forEach(el=>{gsap.from(el,{opacity:0,y:34,duration:0.8,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%'},clearProps:'all'});});
+ if(typeof gsap==='undefined')return;
+ const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ if(reduced){document.querySelectorAll('.rv').forEach(el=>{el.style.opacity='1';el.style.transform='none'});return}
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.from('.rv',{opacity:0,y:26,duration:0.7,ease:'expo.out',stagger:0.07});
+ gsap.utils.toArray('.rv').forEach(el=>{gsap.from(el,{opacity:0,y:34,duration:0.8,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%'},clearProps:'all'})});
 }
 
 function addBusyStates(){
-  document.addEventListener('click',function(e){const btn=e.target.closest('button');if(btn&&!btn.classList.contains('busy')&&!btn.disabled){btn.disabled=true;btn.classList.add('busy');const origText=btn.textContent;btn.textContent='Confirming...';setTimeout(()=>{btn.disabled=false;btn.classList.remove('busy');btn.textContent=origText;},5000);}},true);
+ document.addEventListener('click',function(e){const btn=e.target.closest('button');if(btn&&!btn.classList.contains('busy')&&!btn.disabled){btn.disabled=true;btn.classList.add('busy');const origText=btn.textContent;btn.textContent='Confirming..';setTimeout(()=>{btn.disabled=false;btn.classList.remove('busy');btn.textContent=origText},5000)}},true);
 }
 
 function addAria(){
-  document.querySelectorAll('button').forEach(b=>{if(!b.getAttribute('aria-label')&&!b.getAttribute('aria-labelledby')){b.setAttribute('aria-label',b.textContent.trim()||'button');}});
-  document.querySelectorAll('input,select,textarea').forEach(el=>{if(!el.getAttribute('aria-label')&&!el.getAttribute('aria-labelledby')){const lab=el.previousElementSibling;if(lab&&lab.tagName==='LABEL'){el.setAttribute('aria-labelledby',lab.id||(lab.id='lab-'+Math.random().toString(36).slice(2)));}});
+ document.querySelectorAll('button').forEach(b=>{if(!b.getAttribute('aria-label')&&!b.getAttribute('aria-labelledby')){b.setAttribute('aria-label',b.textContent.trim()||'button')}});
+ document.querySelectorAll('input,select,textarea').forEach(el=>{if(!el.getAttribute('aria-label')&&!el.getAttribute('aria-labelledby')){const lab=el.previousElementSibling;if(lab&&lab.tagName==='LABEL'){el.setAttribute('aria-labelledby',lab.id||(lab.id='lab-'+Math.random().toString(36).slice(2)))}}});
 }
 </script>
 </body></html>
