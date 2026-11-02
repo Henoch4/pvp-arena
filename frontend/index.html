@@ -76,6 +76,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script>
+const PROJECT_ID = 'ee6081d44f535b82b71aa2003badb2b7'; // AppKit project ID — wired for BOT Chain 677
+
 
 const ABI=['function createMatch(address opponent) payable returns (uint256)','function resolveMatch(uint256 matchId,address winner)','function cancelMatch(uint256 matchId)','function getMatch(uint256 matchId) view returns (address creator,address opponent,uint256 stake,uint8 status,address winner)'];
 const ST=['Open','Resolved','Cancelled'];
