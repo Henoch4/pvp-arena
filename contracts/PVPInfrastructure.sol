@@ -37,6 +37,8 @@ contract PVPInfrastructure is ReentrancyGuard, Ownable {
     uint256 public totalPot;
     // FIX: payouts moved to a global pull-payment ledger (winners/creators claim).
     mapping(address => uint256) public pendingPayouts;
+    mapping(uint256 => mapping(address => bool)) public winnerApprovals;
+    mapping(uint256 => bool) public payoutClaimed;
 
     event MatchCreated(uint256 indexed mid, address indexed player1, address indexed player2, uint256 stake);
     event MatchJoined(uint256 indexed mid, address indexed player2, uint256 pot);
@@ -101,7 +103,14 @@ contract PVPInfrastructure is ReentrancyGuard, Ownable {
             m.winner = winner;
         }
         require(m.winner == winner, "Players disagree");
-        // p1/p2 approval state tracked off-match; winner already recorded above.
+        require(!winnerApprovals[mid][msg.sender], "Already approved");
+        winnerApprovals[mid][msg.sender] = true;
+        if (winnerApprovals[mid][m.player1] && winnerApprovals[mid][m.player2]) {
+            m.resolved = true;
+            m.active = false;
+            totalPot -= m.stake * 2;
+            emit MatchResolved(mid, winner, m.stake * 2);
+        }
     }
 
     function getMatch(uint256 mid) external view returns (address player1, address player2, uint256 stake, uint256 deadline, address winner, bool active, bool resolved) {
@@ -116,10 +125,39 @@ contract PVPInfrastructure is ReentrancyGuard, Ownable {
         require(m.resolved, "Match not resolved");
         require(m.winner != address(0), "No winner set");
         require(msg.sender == m.winner, "Only winner");
+        require(!payoutClaimed[mid], "Already claimed");
+        payoutClaimed[mid] = true;
         uint256 prize = m.stake * 2;
         require(prize > 0, "Zero prize");
         (bool ok,) = payable(m.winner).call{value: prize}("");
         require(ok, "ETH transfer failed");
         emit PayoutClaimed(m.winner, prize);
+    }
+
+    function cancelMatch(uint256 mid) external nonReentrant {
+        Match storage m = matches[mid];
+        require(msg.sender == m.player1, "Not challenger");
+        require(m.active && !m.joined && !m.resolved, "Cannot cancel");
+        m.active = false;
+        m.resolved = true;
+        payoutClaimed[mid] = true;
+        (bool ok,) = m.player1.call{value: m.stake}("");
+        require(ok, "Refund failed");
+        emit MatchCancelled(mid, msg.sender);
+    }
+
+    function splitExpiredMatch(uint256 mid) external nonReentrant {
+        Match storage m = matches[mid];
+        require(msg.sender == m.player1 || msg.sender == m.player2, "Not player");
+        require(m.active && m.joined && !m.resolved, "Cannot split");
+        require(block.timestamp > m.deadline, "Not expired");
+        m.active = false;
+        m.resolved = true;
+        payoutClaimed[mid] = true;
+        totalPot -= m.stake * 2;
+        (bool one,) = m.player1.call{value: m.stake}("");
+        (bool two,) = m.player2.call{value: m.stake}("");
+        require(one && two, "Refund failed");
+        emit MatchSplit(mid);
     }
 }
