@@ -1,9 +1,9 @@
 {
-  "abiSource": "pending-current-source",
+  "abiSource": "runtime-matched-current-source",
   "repo": "pvp-arena",
   "brand": "PvP Arena",
   "summary": "Create a match, match the stake, and agree on the winner on-chain.",
-  "address": null,
+  "address": "0xcf3966296e4F6873a368a3D1488d1eD0CB64796b",
   "owner": null,
   "abi": [
     {
